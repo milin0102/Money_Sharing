@@ -99,7 +99,7 @@ async function login(req,res){
 
             if(user && Object.keys(user).length){
                 const userId = user._id;
-                const token = jwt.sign({userId} , JWT_SECRET , {expiresIn:'1h'})
+                const token = jwt.sign({userId} , JWT_SECRET , {expiresIn:60})
                 return res.status(200).json({
                     httpStatusCode:200,
                     success:true,
