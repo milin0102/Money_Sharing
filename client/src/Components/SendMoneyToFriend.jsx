@@ -55,7 +55,11 @@ export default function SendMoneyToFriend(){
 
 function initateTransfer({amount , to , from}){
     let moneyTransferUrl = backEndUrl+ accountRoutes.module + accountRoutes.endpoint.Transfer
-    axios.post(moneyTransferUrl,{amount , to , from}).then((response)=>{
+    const token = localStorage.getItem("token")
+    axios.post(moneyTransferUrl,{amount , to , from},{
+        headers:{
+        authorization:"Bearer "+ token
+    }}).then((response)=>{
         console.log(response)
         if(response.data.status){
             alert("Money send succesfully")
@@ -63,7 +67,10 @@ function initateTransfer({amount , to , from}){
         }
     }).catch((e)=>{
         console.log("Error while transaction: +" + e);
-        alert(e.response.data.message)
+        if(e.response.data.message){
+            alert(e.response.data.message)
+        }
+        window.location.href = "/signin";
         throw e;
     })
 }

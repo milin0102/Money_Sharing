@@ -35,7 +35,7 @@ export default function Signin(){
                             alert("Yes i am in: "+response.data.message)
                             localStorage.setItem("token",response.data.data.token)
                             localStorage.setItem("username",response.data.data.username)
-                            navigate("/")
+                            navigate("/dashboard")
                         }else{
                             alert(response.data.message)
                         }

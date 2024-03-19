@@ -13,7 +13,7 @@ router.get( "/", (req, res) => {
 
 router.post("/balance",getBalance)
 
-router.post("/transfer",async (req,res)=>{
+router.post("/transfer",authenticateToken,async (req,res)=>{
     try {
         const session = await mongoose.startSession();
         session.startTransaction();
