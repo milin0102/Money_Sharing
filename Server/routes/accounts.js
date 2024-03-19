@@ -2,7 +2,7 @@ const express = require("express");
 const Account = require("../dal/accounts")
 const mongoose = require("mongoose")
 const User = require("../dal/user");
-const { authenticateToken } = require("../middleware");
+const { authenticateToken } = require("../auth-middleware");
 const router = express.Router();
 const {getBalance} = require("../controllers/accountController")
 

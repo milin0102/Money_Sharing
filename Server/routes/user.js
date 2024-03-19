@@ -6,7 +6,7 @@ const router = express.Router()
 const redis = require("redis")
 const jwt = require("jsonwebtoken")
 const JWT_SECRET = require("../config")
-const {authenticateToken} = require("../middleware")
+const {authenticateToken} = require("../auth-middleware")
 router.use(express.json());
 const userController = require("../controllers/userController")
 
