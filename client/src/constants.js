@@ -1,5 +1,5 @@
 export const backEndUrls = {
-    'production':'http://ec2-54-252-195-7.ap-southeast-2.compute.amazonaws.com:3000/api/v1/',
+    'production':'https://money-sharing-server.vercel.app/api/v1/',
     'development': 'http://localhost:3000/api/v1/'
 }
 export const userRoutes = {

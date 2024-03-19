@@ -12,6 +12,7 @@ const authenticateToken = function(req, res, next) {
         req.userID = decoded.userID
         next()
     } catch (error) {
+        console.log(error);
         return res.status(403).json("Access Denied");
     }
 }
